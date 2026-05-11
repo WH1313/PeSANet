@@ -2,18 +2,16 @@
 
 PeSANet is a PyTorch implementation of the Gray-Scott 2D model code refactored from `NewMSKNO/gs2d/GS_KNOATTSplittest.py`.
 
-This public package keeps the proposed model and generic training/evaluation utilities only. It intentionally excludes generated data, trained weights, logs, figures, private paths, and baseline models.
+This public package keeps the proposed model and lightweight evaluation utilities only. It intentionally excludes trained weights, logs, figures, private paths, and baseline models.
 
 ## Repository Layout
 
 ```text
 peasnet/
   peasnet/models/          # PeSANet and Koopman neural operator modules
-  peasnet/data/            # Dataset wrappers for user-provided tensors
-  peasnet/training/        # Generic training loop utilities
   peasnet/evaluation/      # Metrics
   configs/                 # Example configuration values
-  examples/                # Smoke forward and external-data training examples
+  examples/                # Smoke forward example
   tests/                   # Minimal import/forward sanity checks
 ```
 
@@ -48,24 +46,6 @@ print(sequence.shape)  # [batch, saved_steps, channels, height, width]
 
 The model expects state tensors shaped `[batch, 2, height, width]`. The original experiments used 128 x 128 Gray-Scott fields with two channels.
 
-## Training With External Data
-
-No data generation code is included. To train on your own prepared `.npy` file:
-
-```bash
-python examples/train_from_npy.py \
-  --train-npy /path/to/train_sequences.npy \
-  --epochs 1 \
-  --batch-size 1 \
-  --steps 2 \
-  --grid-size 128
-```
-
-Accepted array shapes:
-
-- `[num_samples, time, 2, height, width]`
-- `[time, 2, height, width]`, which is treated as one sample
-
 ## Citation
 
 If you use this code, please cite the IJCAI 2025 paper:
@@ -92,5 +72,5 @@ Paper page: https://www.ijcai.org/proceedings/2025/862
 
 - `peasnet.models.PesaNet` is the cleaned public version of the original `RCNN` model in `GS_KNOATTSplittest.py`.
 - `peasnet.models.KNO2d` contains the spectral Koopman operator with channel attention from `KNOATTNchange.py`.
-- Hard-coded checkpoint paths, private data paths, CUDA device selection, plotting scripts, and baseline models were removed from the public package.
+- Hard-coded checkpoint paths, CUDA device selection, plotting scripts, and baseline models were removed from the public package.
 - Add a license file before publishing the repository.
