@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local datasets and experiment artifacts are intentionally excluded.
+/data/
+/datasets/
+/checkpoints/
+/outputs/
+/runs/
+/fig/
+/result/
+/pisafig/
+/pisaresult/
+
+*.pt
+*.pth
+*.ckpt
+*.mat
+*.npy
+*.npz
+*.log
