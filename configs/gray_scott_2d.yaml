@@ -1,0 +1,19 @@
+model:
+  name: PesaNet
+  step: 2
+  effective_step: [0, 1]
+  modes_x: 8
+  modes_y: 8
+  dx: 0.0078125
+  dt: 0.5
+
+data:
+  # Provide your own prepared file. Data generation is not included.
+  train_npy: /path/to/train_sequences.npy
+  shape: [num_samples, time, 2, 128, 128]
+
+training:
+  epochs: 1
+  batch_size: 1
+  learning_rate: 0.001
+  device: cuda
