@@ -6,10 +6,10 @@ PeSANet is a PyTorch implementation of PeSANet: Physics-encoded Spectral Attenti
 
 ```text
 peasnet/
-  peasnet/models/          # PeSANet and Koopman neural operator modules
+  peasnet/models/          # PeSANet
   peasnet/evaluation/      # Metrics
   configs/                 # Example configuration values
-  examples/                # Smoke forward example
+  examples/                # Example
   tests/                   # Minimal import/forward sanity checks
 ```
 
@@ -21,13 +21,7 @@ pip install -e .
 
 Install PyTorch for your CUDA or CPU environment first, following the official PyTorch instructions.
 
-## Quick Smoke Test
 
-```bash
-python examples/smoke_forward.py --grid-size 64 --steps 2 --modes 4
-```
-
-Expected output includes a sequence shape like `[1, 3, 2, 64, 64]`.
 
 ## Basic Usage
 
@@ -66,9 +60,4 @@ If you use this code, please cite the IJCAI 2025 paper:
 
 Paper page: https://www.ijcai.org/proceedings/2025/862
 
-## Notes
 
-- `peasnet.models.PesaNet` is the cleaned public version of the original `RCNN` model in `GS_KNOATTSplittest.py`.
-- `peasnet.models.KNO2d` contains the spectral Koopman operator with channel attention from `KNOATTNchange.py`.
-- Hard-coded checkpoint paths, CUDA device selection, plotting scripts, and baseline models were removed from the public package.
-- Add a license file before publishing the repository.
