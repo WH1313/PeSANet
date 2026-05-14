@@ -1,6 +1,6 @@
 # PeSANet
 
-PeSANet is a PyTorch implementation of the Gray-Scott 2D model code.
+PeSANet is a PyTorch implementation of PeSANet: Physics-encoded Spectral Attention Network for Simulating PDE-Governed Complex Systems.
 
 ## Repository Layout
 
