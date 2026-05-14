@@ -2,8 +2,6 @@
 
 PeSANet is a PyTorch implementation of the Gray-Scott 2D model code refactored from `NewMSKNO/gs2d/GS_KNOATTSplittest.py`.
 
-This public package keeps the proposed model and lightweight evaluation utilities only. It intentionally excludes trained weights, logs, figures, private paths, and baseline models.
-
 ## Repository Layout
 
 ```text
